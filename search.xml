@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Flask Sqlalchemy Postgres Update JSONB</title>
+    <url>/github.io/2020/05/24/flask-orm-bugs/</url>
+    <content><![CDATA[<h1 id="Flask-Sqlalchemy"><a href="#Flask-Sqlalchemy" class="headerlink" title="Flask Sqlalchemy"></a>Flask Sqlalchemy</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>环境 Flask Sqlalchemy ORM，数据库Postgres9.6</p>
+</blockquote>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>用flask Sqlalchemy的ORM更新JSONB时无效，<a href="https://stackoverflow.com/questions/42559434/updates-to-json-field-dont-persist-to-db" target="_blank" rel="noopener">同问题链接</a><br>根据问题描述是由于 Postgres &lt; 9.4 版本问题，但是我的版本为9.6也出现同样问题，用此方法解决:<br>用flag_modified告诉Sqlalchemy需要更新JSON</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy.orm.attributes <span class="keyword">import</span> flag_modified</span></pre></td></tr><tr><td class="code"><pre><span class="line">model.data[<span class="string">'key'</span>] = <span class="string">'New value'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">flag_modified(model, <span class="string">"data"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">session.add(model)</span></pre></td></tr><tr><td class="code"><pre><span class="line">session.commit()</span></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>坑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>翻越GFW Version3</title>
+    <url>/github.io/2020/05/24/%E7%BF%BB%E8%B6%8AGFW-V3/</url>
+    <content><![CDATA[<h1 id="V2ray"><a href="#V2ray" class="headerlink" title="V2ray"></a>V2ray</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>有VPS</p>
+</blockquote>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>首先得有一个VPS，我这里用的是国际版的 <a href="https://portal.azure.com" target="_blank" rel="noopener">Azure</a>。其他的也行，反正能在外面建虚拟机就行。</p>
+<p>然后在Azure上创建虚拟机，怎么创建我就不说了。我现在虚机版本是<strong>Ubuntu 16.04 LTS</strong></p>
+<h2 id="进入正题配置"><a href="#进入正题配置" class="headerlink" title="进入正题配置"></a>进入正题配置</h2><p><a href="https://www.v2ray.com/chapter_00/start.html" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo passwd                                     <span class="comment"># 设置root 密码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">su                                              <span class="comment"># 进入root</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">bash &lt;(curl -L -s https://install.direct/go.sh) <span class="comment">#安装v2ray</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">vim /etc/v2ray/config.json                      <span class="comment">#编辑文件来配置你需要的代理方式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo pip install shadowsocks</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo systemctl start v2ray                      <span class="comment"># 启动</span></span></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>V2ray</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>配置Nginx+uwsgi+django出现的问题</title>
     <url>/github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="Nginx-uwsgi-django"><a href="#Nginx-uwsgi-django" class="headerlink" title="Nginx+uwsgi+django"></a>Nginx+uwsgi+django</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>

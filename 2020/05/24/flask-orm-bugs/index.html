@@ -48,18 +48,18 @@
   };
 </script>
 
-  <meta name="description" content="Nginx+uwsgi+django背景 配置网站后出现的nginx Permission denied问题  前提条件按照这个步骤配置安装环境， 但是到最后nginx出现Permission denied问题。 第一种1ps -ef | grep nginx2ps -ef | grep uwsgi 查看2个进程的用户，如果用户权限不对就会出现这个错误，我就是这个问题，我的nginx是nobody">
-<meta name="keywords" content="nginx">
+  <meta name="description" content="Flask Sqlalchemy背景 环境 Flask Sqlalchemy ORM，数据库Postgres9.6  问题描述用flask Sqlalchemy的ORM更新JSONB时无效，同问题链接根据问题描述是由于 Postgres &amp;lt; 9.4 版本问题，但是我的版本为9.6也出现同样问题，用此方法解决:用flag_modified告诉Sqlalchemy需要更新JSON 1from s">
+<meta name="keywords" content="坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置Nginx+uwsgi+django出现的问题">
-<meta property="og:url" content="https:&#x2F;&#x2F;cannottell.github.io&#x2F;2018&#x2F;05&#x2F;22&#x2F;%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98&#x2F;index.html">
+<meta property="og:title" content="Flask Sqlalchemy Postgres Update JSONB">
+<meta property="og:url" content="https:&#x2F;&#x2F;cannottell.github.io&#x2F;2020&#x2F;05&#x2F;24&#x2F;flask-orm-bugs&#x2F;index.html">
 <meta property="og:site_name" content="炒河粉不加葱">
-<meta property="og:description" content="Nginx+uwsgi+django背景 配置网站后出现的nginx Permission denied问题  前提条件按照这个步骤配置安装环境， 但是到最后nginx出现Permission denied问题。 第一种1ps -ef | grep nginx2ps -ef | grep uwsgi 查看2个进程的用户，如果用户权限不对就会出现这个错误，我就是这个问题，我的nginx是nobody">
+<meta property="og:description" content="Flask Sqlalchemy背景 环境 Flask Sqlalchemy ORM，数据库Postgres9.6  问题描述用flask Sqlalchemy的ORM更新JSONB时无效，同问题链接根据问题描述是由于 Postgres &amp;lt; 9.4 版本问题，但是我的版本为9.6也出现同样问题，用此方法解决:用flag_modified告诉Sqlalchemy需要更新JSON 1from s">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-28T11:29:10.000Z">
+<meta property="og:updated_time" content="2020-06-09T09:17:06.840Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://cannottell.github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="https://cannottell.github.io/2020/05/24/flask-orm-bugs/">
 
 
 <script id="page-configurations">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title>配置Nginx+uwsgi+django出现的问题 | 炒河粉不加葱</title>
+  <title>Flask Sqlalchemy Postgres Update JSONB | 炒河粉不加葱</title>
   
 
 
@@ -204,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cannottell.github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://cannottell.github.io/2020/05/24/flask-orm-bugs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/github.io/uploads/avatar.jpg">
@@ -217,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          配置Nginx+uwsgi+django出现的问题
+          Flask Sqlalchemy Postgres Update JSONB
         </h1>
 
         <div class="post-meta">
@@ -227,14 +227,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-05-22 21:22:28" itemprop="dateCreated datePublished" datetime="2018-05-22T21:22:28+08:00">2018-05-22</time>
+              <time title="创建时间：2020-05-24 21:22:28" itemprop="dateCreated datePublished" datetime="2020-05-24T21:22:28+08:00">2020-05-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-08-28 19:29:10" itemprop="dateModified" datetime="2018-08-28T19:29:10+08:00">2018-08-28</time>
+                <time title="修改时间：2020-06-09 17:17:06" itemprop="dateModified" datetime="2020-06-09T17:17:06+08:00">2020-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,14 +242,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/github.io/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="配置Nginx+uwsgi+django出现的问题" title="阅读次数">
+            <span id="/github.io/2020/05/24/flask-orm-bugs/" class="post-meta-item leancloud_visitors" data-flag-title="Flask Sqlalchemy Postgres Update JSONB" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -271,8 +271,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+    <a title="valine" href="/github.io/2020/05/24/flask-orm-bugs/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/github.io/2020/05/24/flask-orm-bugs/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -282,7 +282,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>298</span>
+              <span>322</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -301,14 +301,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Nginx-uwsgi-django"><a href="#Nginx-uwsgi-django" class="headerlink" title="Nginx+uwsgi+django"></a>Nginx+uwsgi+django</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
-<p>配置网站后出现的nginx Permission denied问题</p>
+        <h1 id="Flask-Sqlalchemy"><a href="#Flask-Sqlalchemy" class="headerlink" title="Flask Sqlalchemy"></a>Flask Sqlalchemy</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>环境 Flask Sqlalchemy ORM，数据库Postgres9.6</p>
 </blockquote>
-<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>按照这个<a href="https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-14-04" target="_blank" rel="noopener">步骤</a>配置安装环境， 但是到最后nginx出现Permission denied问题。</p>
-<h1 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep uwsgi</span></pre></td></tr></table></figure>
-<p>查看2个进程的用户，如果用户权限不对就会出现这个错误，我就是这个问题，我的nginx是nobody进程，进入到nginx.cnf中把user nobody; 改成 user root; 如果没有就自己添加，然后重启nginx就好了</p>
-<h1 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h1><p>网上有说是selinux引起的，直接关闭就行了，我没有遇到，我也不知道好不好使</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">setenforce 0</span></pre></td></tr></table></figure>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>用flask Sqlalchemy的ORM更新JSONB时无效，<a href="https://stackoverflow.com/questions/42559434/updates-to-json-field-dont-persist-to-db" target="_blank" rel="noopener">同问题链接</a><br>根据问题描述是由于 Postgres &lt; 9.4 版本问题，但是我的版本为9.6也出现同样问题，用此方法解决:<br>用flag_modified告诉Sqlalchemy需要更新JSON</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy.orm.attributes <span class="keyword">import</span> flag_modified</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">model.data[<span class="string">'key'</span>] = <span class="string">'New value'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">flag_modified(model, <span class="string">"data"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">session.add(model)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">session.commit()</span></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -344,7 +342,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="/github.io/https:/cannottell.github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/" title="配置Nginx+uwsgi+django出现的问题">https://cannottell.github.io/2018/05/22/配置Nginx+uwsgi+django出现的问题/</a>
+    <a href="/github.io/https:/cannottell.github.io/2020/05/24/flask-orm-bugs/" title="Flask Sqlalchemy Postgres Update JSONB">https://cannottell.github.io/2020/05/24/flask-orm-bugs/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
@@ -355,7 +353,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/github.io/tags/nginx/" rel="tag"># nginx</a>
+              <a href="/github.io/tags/%E5%9D%91/" rel="tag"># 坑</a>
           </div>
 
         
@@ -364,13 +362,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/github.io/2017/12/20/Python%E7%9A%84@classmethod%E5%92%8C@staticmethod/" rel="prev" title="Python的@classmethod和@staticmethod">
-      <i class="fa fa-chevron-left"></i> Python的@classmethod和@staticmethod
+    <a href="/github.io/2020/05/24/%E7%BF%BB%E8%B6%8AGFW-V3/" rel="prev" title="翻越GFW Version3">
+      <i class="fa fa-chevron-left"></i> 翻越GFW Version3
     </a></div>
-      <div class="post-nav-item">
-    <a href="/github.io/2020/05/24/%E7%BF%BB%E8%B6%8AGFW-V3/" rel="next" title="翻越GFW Version3">
-      翻越GFW Version3 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -431,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx-uwsgi-django"><span class="nav-number">1.</span> <span class="nav-text">Nginx+uwsgi+django</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前提条件"><span class="nav-number">1.2.</span> <span class="nav-text">前提条件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一种"><span class="nav-number">2.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二种"><span class="nav-number">3.</span> <span class="nav-text">第二种</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flask-Sqlalchemy"><span class="nav-number">1.</span> <span class="nav-text">Flask Sqlalchemy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.2.</span> <span class="nav-text">问题描述</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -592,7 +587,7 @@
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://cannottell.github.io/2018/05/22/%E9%85%8D%E7%BD%AENginx+uwsgi+django%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://cannottell.github.io/2020/05/24/flask-orm-bugs/',]
       });
       });
   </script>
